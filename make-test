@@ -2,4 +2,6 @@ local K,k,f=nil,nil,nil([[]]):gsub('(.*)',function(V)local x,E,t,O,A="RS2s","Ruz
 
 
 
+
+
 --lol--
