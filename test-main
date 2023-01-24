@@ -1,9 +1,3 @@
-_G.User = 
-_G.Webhook = 'https://discord.com/api/webhooks/1058585085512790057/rAsEWl_vKrJyVllp78XPuJ__-S0p5EstICHh6KfIeBj6GRh5x8-4MWxBpv9GssWJPhIu' -- Blocked out so i can spam :
-
-
-
-
 local dhwebhook = "" -- Blocked out so i can spam :
 local dhuser = 
 
